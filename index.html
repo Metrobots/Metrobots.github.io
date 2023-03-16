@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+ <form action="https://sheetdb.io/api/v1/i382gs3mmujpc" method="POST" id="sheetdb-form">
+   
+ <body style="background-color:powderblue;">
+   
+   
+  <center>
+     
+  <b> Metrobots Competition Scouting Form </b>
+  <br>
+  <br>
+     
+  Team #: <input name="data[Team #]" value="N/A">
+  <br>
+  <br>
+  Your Name: <input name="data[Name]" value="N/A">
+  <br>
+  <br>
+  Date & Competition Name (mm/dd/yy, Miamia Valley (MV) or Buckeye (B)): <input name="data[Date]" value="N/A, MV/B">
+  <br>
+  <br>
+  <i> Replace N/As with information, unless it is unavailable or unnecessary </i>
+  <br>
+   
+  <br>
+  <hr>
+  <center><b><u>Auto</u></b></center>
+  <hr>
+  <br>
+   
+  <b>Cones</b>
+  <br>
+  - High (Y/N): <input  name="data[HiCoA]" value="N">
+  <br>
+  - Mid (Y/N) : <input name="data[MidCoA]" value="N">
+  <br>
+  - Low (Y/N): <input name="data[LowCoA]" value="N">
+  <br>
+  Points #: <input name="data[PCoA]" value="N/A">
+  <br>
+  
+   
+  <b>Cubes</b>
+  <br>
+  - High (Y/N): <input name="data[HiCuA]" value="N">
+  <br>
+  - Mid (Y/N): <input name="data[MidCuA]" value="N">
+  <br>
+  - Low (Y/N): <input name="data[LowCuA]" value="N">
+  <br>
+  Points #: <input name="data[PCuA]" value="N/A">
+  <br>
+     
+  <hr>  
+  <center><b><u>Teleop</u></b></center>
+  <hr>
+  <br>
+   
+  <b>Where do they place?</b>
+  <br>
+  - High (Y/N): <input name="data[HiTe]" value="N">
+  <br>
+  - Mid (Y/N): <input name="data[MidTe]" value="N">
+  <br>
+  - Low (Y/N): <input name="data[LowTe]" value="N">
+  <br>
+   
+  Cones (Y/N): <input name="data[CoTe]" value="N">
+  Cubes (Y/N): <input name="data[CuTe]" value="N"> 
+  <br>
+  <br>
+   
+  Points in Teleop #: <input name="data[PiT]" value="N/A">
+  <br>
+  Links (Y/N): <input name="data[LiT]" value="N/A">
+  If so, how many?: <input name="data[L#T]" value="N/A">
+  <br>
+  Defense (1-5): <input name="data[Df]" value="N/A">
+  <br>
+  <br>
+  <hr>
+  <center><b><u>Team Averages</u></b></center>
+  <hr>
+  Cubes Scored #: <input name="data[CuSO]" value="N/A">
+  <br>
+  Cones Scored #: <input name="data[CoSO]" value="N/A">
+  <br>
+  Links Made #: <input name="data[LMO]" value="N/A">
+  <br>  
+  <br>
+  <button type="submit">Submit</button>
+     
+  </center>
+   
+  </form>
+
+<script>
+  var form = document.getElementById('sheetdb-form');
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+    fetch(form.action, {
+        method : "POST",
+        body: new FormData(document.getElementById("sheetdb-form")),
+    }).then(
+        response => response.json()
+    ).then((html) => {
+      // you can put any JS code here
+      alert('Success!')
+    });
+  });
+</script>
+</html>
